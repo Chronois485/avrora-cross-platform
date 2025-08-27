@@ -1,10 +1,12 @@
-import speech_recognition as sr
-import sounddevice as sd
-from scipy.io.wavfile import write
 import logging
-import constants as const
-import numpy as np
 import os
+
+import numpy as np
+import sounddevice as sd
+import speech_recognition as sr
+from scipy.io.wavfile import write
+
+import constants as const
 
 logging.basicConfig(filename=const.LOGGING_FILENAME, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger()
@@ -25,6 +27,7 @@ def record_voice(record_filename):
     write(record_filename, const.FREQUENCY, recording_int16)
     logger.info(f"Output saved into {record_filename}")
 
+
 def speech_to_text(audio_file):
     r = sr.Recognizer()
 
@@ -38,6 +41,7 @@ def speech_to_text(audio_file):
         return recognized_text
     except sr.UnknownValueError:
         logger.warning("Could not understand audio")
+        return ""
     except sr.RequestError as e:
         logger.error(f"Could not request results from Google Speech Recognition service; {e}")
-
+        return ""

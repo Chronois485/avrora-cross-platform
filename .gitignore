@@ -1,4 +1,5 @@
 ./.idea
 ./.venv
-./src/avrora.log
+./avrora.log
 ./src/audio
+./src/avrora.log
