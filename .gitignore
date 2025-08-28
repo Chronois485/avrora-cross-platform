@@ -3,3 +3,9 @@
 ./avrora.log
 ./src/audio
 ./src/avrora.log
+/.idea/.gitignore
+/.idea/avrora-cross-platform.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml
