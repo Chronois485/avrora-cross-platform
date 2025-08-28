@@ -45,3 +45,9 @@ def speech_to_text(audio_file):
     except sr.RequestError as e:
         logger.error(f"Could not request results from Google Speech Recognition service; {e}")
         return ""
+
+
+def text_to_speech():
+    pass
+
+text_to_speech()
